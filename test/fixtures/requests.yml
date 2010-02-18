@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  question: MyText
+  answer: MyText
+  image_data: 
+
+two:
+  question: MyText
+  answer: MyText
+  image_data: 
