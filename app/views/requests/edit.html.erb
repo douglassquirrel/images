@@ -1,7 +1,10 @@
 <h1>Editing request</h1>
 
 <p>
-  <img src="<%=h image_request_path(@request) %>" alt="Image uploaded as part of this request"/>
+  <img style="height:50%; width:50%" 
+       src="<%=h image_request_path(@request) %>" 
+       alt="Image uploaded as part of this request"
+       onclick="location.href = '<%= image_request_path(@request) %>'" />
 </p>
 
 <% form_for(@request) do |f| %>
