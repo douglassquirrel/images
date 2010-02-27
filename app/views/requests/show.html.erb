@@ -1,20 +1,23 @@
-<p>
-  <img style="height:50%; width:50%" 
+<div class="span-24 last">
+  <img class="centred halfsize"  
        src="<%=h image_request_path(@request) %>" 
        alt="Image uploaded as part of this request"
        onclick="location.href = '<%= image_request_path(@request) %>'" />
-</p>
+</div>
 
-<p>
+<div class="span-12">
   <b>Question:</b>
   <%=h @request.question %>
-</p>
+</div>
 
-<p>
+<div class="span-12 last">
   <b>Answer:</b>
   <%=h @request.answer %>
-</p>
+</div>
 
-
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<div class="prepend-9 span-4 append-9 last">
+  <form action="">
+    <input type="button" value="Edit" onclick="location.href='<%= edit_request_path %>'"/>
+    <input type="button" value="All"  onclick="location.href='<%= requests_path     %>'"/>
+  </form>
+</div>

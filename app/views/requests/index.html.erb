@@ -1,22 +1,30 @@
-<h1>Listing requests</h1>
 
-<table>
-  <tr>
-    <th>Question</th>
-    <th>Answer</th>
-  </tr>
+<div class="span-24 last">
+  <h2>All requests</h2>
 
-<% @requests.each do |request| %>
-  <tr>
-    <td><%=h request.question %></td>
-    <td><%=h request.answer %></td>
-    <td><%= link_to 'Show', request %></td>
-    <td><%= link_to 'Edit', edit_request_path(request) %></td>
-    <td><%= link_to 'Destroy', request, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+      <th>Actions</th>
+    </tr>
 
-<br />
+  <% @requests.each do |request| %>
+    <tr class="<%= cycle("", "altrow") %>">
+      <td><%=h request.question %></td>
+      <td><%=h request.answer %></td>
+      <td>
+        <%= link_to 'Show', request %>
+        <%= link_to 'Edit', edit_request_path(request) %>
+        <%= link_to 'Destroy', request, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
-<%= link_to 'New request', new_request_path %>
+<div class="prepend-10 span-2 append-10 last">
+  <form action="">
+    <input type="button" value="Add request" onclick="location.href='<%= new_request_path %>'"/>
+  </form>
+</div>
