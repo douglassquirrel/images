@@ -1,27 +1,27 @@
-<h1>Editing request</h1>
+<h2>Edit request</h2>
 
-<p>
-  <img style="height:50%; width:50%" 
+<div class="span-24 last">
+  <img class="centred halfsize"  
        src="<%=h image_request_path(@request) %>" 
        alt="Image uploaded as part of this request"
        onclick="location.href = '<%= image_request_path(@request) %>'" />
-</p>
+</div>
 
 <% form_for(@request) do |f| %>
   <%= f.error_messages %>
 
-  <p>
+  <div class="span-11 append-1">
     <%= f.label :question %><br />
-    <%= f.text_area :question %>
-  </p>
-  <p>
+    <%= f.text_area :question, :rows => 5 %>
+  </div>
+  <div class="prepend-1 span-11 last">
     <%= f.label :answer %><br />
-    <%= f.text_area :answer %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+    <%= f.text_area :answer, :rows => 5 %>
+  </div>
 
-<%= link_to 'Show', @request %> |
-<%= link_to 'Back', requests_path %>
+  <div class="prepend-9 span-6 append-9 last">
+    <%= f.submit 'Update' %>
+    <input type="button" value="Show" onclick="location.href='<%= request_path  %>'"/>
+    <input type="button" value="All"  onclick="location.href='<%= requests_path %>'"/>
+  </div>
+<% end %>
